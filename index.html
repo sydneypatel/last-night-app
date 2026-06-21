@@ -11,28 +11,92 @@
             background: #000;
             color: #fff;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
         }
 
-        nav {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 24px 48px;
-            flex-shrink: 0;
+        /* ── Desktop layout ── */
+        @media (min-width: 768px) {
+            body { overflow: hidden; height: 100vh; }
+
+            nav {
+                display: flex;
+                justify-content: flex-end;
+                padding: 24px 48px;
+                flex-shrink: 0;
+            }
+
+            .main {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 64px;
+                padding: 0 80px;
+            }
+
+            .left { width: 380px; flex-shrink: 0; }
+
+            .right {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+                width: 200px;
+                flex-shrink: 0;
+            }
+
+            .phone-frame {
+                display: block;
+                width: 200px;
+                border-radius: 32px;
+                overflow: hidden;
+                box-shadow: 0 24px 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.08);
+            }
+
+            .phone-frame img { width: 100%; display: block; }
+
+            footer {
+                padding: 20px 48px;
+                flex-shrink: 0;
+                display: flex;
+                justify-content: flex-end;
+                gap: 24px;
+            }
         }
 
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
+        /* ── Mobile layout ── */
+        @media (max-width: 767px) {
+            nav {
+                display: flex;
+                justify-content: flex-end;
+                padding: 20px 24px;
+            }
+
+            .main {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 40px 32px;
+            }
+
+            .right { display: none; }
+
+            footer {
+                padding: 24px 32px;
+                display: flex;
+                justify-content: center;
+                gap: 24px;
+            }
         }
+
+        /* ── Shared styles ── */
+        .nav-links { display: flex; gap: 28px; }
 
         .nav-links a {
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.4);
             text-decoration: none;
             font-size: 14px;
             transition: color 0.2s;
@@ -40,30 +104,10 @@
 
         .nav-links a:hover { color: #fff; }
 
-        .main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 80px;
-            gap: 64px;
-        }
-
-        .left {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 380px;
-            flex-shrink: 0;
-        }
-
-        .moon {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
+        .moon { font-size: 36px; margin-bottom: 20px; }
 
         h1 {
-            font-size: 56px;
+            font-size: 52px;
             font-weight: 700;
             letter-spacing: -2px;
             line-height: 1;
@@ -80,27 +124,15 @@
         .steps {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 20px;
+            margin-bottom: 40px;
         }
 
-        .step {
-            display: flex;
-            align-items: flex-start;
-            gap: 14px;
-        }
+        .step { display: flex; align-items: flex-start; gap: 14px; }
 
-        .step-icon {
-            font-size: 20px;
-            width: 32px;
-            flex-shrink: 0;
-            margin-top: 1px;
-        }
+        .step-icon { font-size: 20px; width: 28px; flex-shrink: 0; margin-top: 1px; }
 
-        .step-text h3 {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
+        .step-text h3 { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
 
         .step-text p {
             font-size: 13px;
@@ -108,61 +140,32 @@
             line-height: 1.4;
         }
 
-        .right {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-            flex-shrink: 0;
-            width: 200px;
-        }
-
-        .phone-frame {
-            width: 200px;
-            border-radius: 32px;
-            overflow: hidden;
-            box-shadow: 0 24px 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.08);
-        }
-
-        .phone-frame img {
-            width: 100%;
-            display: block;
-        }
-
-        .buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            width: 100%;
-        }
+        .buttons { display: flex; flex-direction: column; gap: 10px; }
 
         .testflight-btn {
             display: block;
             background: rgba(255,255,255,0.1);
             color: #fff;
             text-decoration: none;
-            padding: 12px 20px;
+            padding: 14px 24px;
             border-radius: 50px;
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 600;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.15);
             transition: all 0.2s;
         }
 
-        .testflight-btn:hover {
-            background: rgba(255,255,255,0.15);
-            border-color: rgba(255,255,255,0.3);
-        }
+        .testflight-btn:hover { background: rgba(255,255,255,0.15); }
 
         .app-store-btn {
             display: block;
             background: #fff;
             color: #000;
             text-decoration: none;
-            padding: 12px 20px;
+            padding: 14px 24px;
             border-radius: 50px;
-            font-size: 13px;
+            font-size: 15px;
             font-weight: 600;
             text-align: center;
             transition: opacity 0.2s;
@@ -170,21 +173,14 @@
 
         .app-store-btn:hover { opacity: 0.85; }
 
-        footer {
-            padding: 20px 48px;
-            flex-shrink: 0;
-            display: flex;
-            justify-content: flex-end;
-            gap: 24px;
-        }
-
         footer a {
-            color: rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.25);
             text-decoration: none;
-            font-size: 12px;
+            font-size: 13px;
+            transition: color 0.2s;
         }
 
-        footer a:hover { color: rgba(255,255,255,0.5); }
+        footer a:hover { color: rgba(255,255,255,0.6); }
     </style>
 </head>
 <body>
@@ -201,6 +197,7 @@
             <div class="moon">🌙</div>
             <h1>last night.</h1>
             <p class="tagline">capture the night with friends. photos unlock at sunrise.</p>
+
             <div class="steps">
                 <div class="step">
                     <div class="step-icon">📸</div>
@@ -224,15 +221,16 @@
                     </div>
                 </div>
             </div>
+
+            <div class="buttons">
+                <a href="https://testflight.apple.com/join/NHrEKnx8" class="testflight-btn">join the beta on testflight</a>
+                <a href="#" class="app-store-btn">download on the app store</a>
+            </div>
         </div>
 
         <div class="right">
             <div class="phone-frame">
                 <img src="screenshot.png" alt="Last Night app">
-            </div>
-            <div class="buttons">
-                <a href="https://testflight.apple.com/join/NHrEKnx8" class="testflight-btn">join the beta on testflight</a>
-                <a href="#" class="app-store-btn">download on the app store</a>
             </div>
         </div>
     </div>
