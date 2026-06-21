@@ -46,14 +46,15 @@
             align-items: center;
             justify-content: center;
             padding: 0 80px;
-            gap: 40px;
+            gap: 64px;
         }
 
         .left {
-            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            width: 380px;
+            flex-shrink: 0;
         }
 
         .moon {
@@ -74,7 +75,6 @@
             color: rgba(255,255,255,0.45);
             line-height: 1.5;
             margin-bottom: 40px;
-            max-width: 360px;
         }
 
         .steps {
@@ -114,13 +114,14 @@
             align-items: center;
             gap: 16px;
             flex-shrink: 0;
+            width: 200px;
         }
 
         .phone-frame {
-            width: 220px;
-            border-radius: 36px;
+            width: 200px;
+            border-radius: 32px;
             overflow: hidden;
-            box-shadow: 0 32px 80px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.08);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.08);
         }
 
         .phone-frame img {
@@ -140,9 +141,9 @@
             background: rgba(255,255,255,0.1);
             color: #fff;
             text-decoration: none;
-            padding: 13px 28px;
+            padding: 12px 20px;
             border-radius: 50px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.15);
@@ -159,9 +160,9 @@
             background: #fff;
             color: #000;
             text-decoration: none;
-            padding: 13px 28px;
+            padding: 12px 20px;
             border-radius: 50px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
             text-align: center;
             transition: opacity 0.2s;
@@ -200,7 +201,6 @@
             <div class="moon">🌙</div>
             <h1>last night.</h1>
             <p class="tagline">capture the night with friends. photos unlock at sunrise.</p>
-
             <div class="steps">
                 <div class="step">
                     <div class="step-icon">📸</div>
