@@ -3,85 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Last Night – Privacy Policy</title>
+    <title>Last Night</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 40px 20px; color: #1a1a1a; line-height: 1.6; background: #fff; }
-        h1 { font-size: 28px; margin-bottom: 4px; }
-        h2 { font-size: 18px; margin-top: 32px; margin-bottom: 8px; }
-        h3 { font-size: 15px; margin-top: 20px; margin-bottom: 4px; }
-        p, li { font-size: 15px; color: #333; }
-        ul { padding-left: 20px; }
-        .subtitle { color: #666; font-style: italic; margin-bottom: 32px; }
-        a { color: #000; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+          background: #000;
+          color: #fff;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+        }
+
+        /* ── Desktop layout ── */
+        @media (min-width: 768px) {
+            body { overflow: hidden; height: 100vh; }
+
+            nav {
+                display: flex;
+                justify-content: flex-end;
+                padding: 24px 48px;
+                flex-shrink: 0;
+            }
+
+            .main {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 64px;
+                padding: 0 80px;
+            }
+
+            .left { width: 380px; flex-shrink: 0; }
+
+            .right {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+                width: 200px;
+                flex-shrink: 0;
+            }
+
+            .phone-frame {
+                display: block;
+                width: 200px;
+                border-radius: 32px;
+                overflow: hidden;
+                box-shadow: 0 24px 60px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.08);
+            }
+
+            .phone-frame img { width: 100%; display: block; }
+
+            footer {
+                padding: 20px 48px;
+                flex-shrink: 0;
+                display: flex;
+                justify-content: flex-end;
+                gap: 24px;
+            }
+        }
+
+        /* ── Mobile layout ── */
+        @media (max-width: 767px) {
+            nav {
+                display: flex;
+                justify-content: flex-end;
+                padding: 20px 24px;
+            }
+
+            .main {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 40px 32px;
+            }
+
+            .right { display: none; }
+
+            footer {
+                padding: 24px 32px;
+                display: flex;
+                justify-content: center;
+                gap: 24px;
+            }
+        }
+
+        /* ── Shared styles ── */
+        .nav-links { display: flex; gap: 28px; }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: #fff; }
+
+        .moon { font-size: 72px; margin-bottom: 16px; }
+
+        h1 {
+            font-size: 52px;
+            font-weight: 700;
+            letter-spacing: -2px;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.5;
+            margin-bottom: 40px;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .step { display: flex; align-items: flex-start; gap: 14px; }
+
+        .step-icon { font-size: 20px; width: 28px; flex-shrink: 0; margin-top: 1px; }
+
+        .step-text h3 { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+
+        .step-text p {
+            font-size: 13px;
+            color: rgba(255,255,255,0.4);
+            line-height: 1.4;
+        }
+
+        .buttons { display: flex; flex-direction: column; gap: 10px; }
+
+        .testflight-btn {
+            display: block;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            text-decoration: none;
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.2s;
+        }
+
+        .testflight-btn:hover { background: rgba(255,255,255,0.15); }
+
+        .app-store-btn {
+            display: block;
+            background: #fff;
+            color: #000;
+            text-decoration: none;
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            text-align: center;
+            transition: opacity 0.2s;
+        }
+
+        .app-store-btn:hover { opacity: 0.85; }
+
+        footer a {
+            color: rgba(255,255,255,0.25);
+            text-decoration: none;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+
+        footer a:hover { color: rgba(255,255,255,0.6); }
     </style>
 </head>
 <body>
-    <p><a href="/">← last night</a></p>
-    <br>
-    <h1>Privacy Policy</h1>
-    <p class="subtitle">Effective Date: June 22, 2026</p>
-    <p>This Privacy Policy explains how Last Night collects, uses, stores, and shares information about you when you use the Last Night mobile application.</p>
 
-    <h2>1. Information We Collect</h2>
-    <h3>1.1 Information You Provide</h3>
-    <ul>
-        <li>Name and email address via Google or Apple Sign-In</li>
-        <li>Profile photo and display name</li>
-        <li>Photos you capture and upload within groups</li>
-        <li>Bio and other profile information</li>
-    </ul>
-    <h3>1.2 Information Collected Automatically</h3>
-    <ul>
-        <li>Device type, OS version, and unique device identifiers</li>
-        <li>Push notification tokens</li>
-        <li>Log data including IP address and timestamps</li>
-    </ul>
-    <h3>1.3 What We Don't Collect</h3>
-    <p>We do not collect payment information, GPS location, biometric data, or advertising data.</p>
+    <nav>
+        <div class="nav-links">
+            <a href="/privacy">privacy</a>
+            <a href="/terms">terms</a>
+        </div>
+    </nav>
 
-    <h2>2. How We Use Your Information</h2>
-    <ul>
-        <li>Create and manage your account</li>
-        <li>Enable group photo sharing with time-locked unlock functionality</li>
-        <li>Send push notifications when group photos unlock</li>
-        <li>Operate, maintain, and improve the app</li>
-        <li>Detect and prevent fraud and abuse</li>
-    </ul>
+    <div class="main">
+        <div class="left">
+            <div class="moon">🌙</div>
+            <h1>last night.</h1>
+            <p class="tagline">capture the night with friends. photos unlock at sunrise.</p>
 
-    <h2>3. How We Share Your Information</h2>
-    <h3>3.1 With Other Users</h3>
-    <p>Your profile and photos are visible to members of your groups.</p>
-    <h3>3.2 With Service Providers</h3>
-    <ul>
-        <li>Firebase (Google LLC) — authentication</li>
-        <li>Amazon Web Services — photo storage, delivery, and backend infrastructure</li>
-        <li>Apple — Sign in with Apple and push notification delivery</li>
-    </ul>
-    <h3>3.3 We Do Not Sell Your Data</h3>
-    <p>We do not sell, rent, or trade your personal information.</p>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">📸</div>
+                    <div class="step-text">
+                        <h3>capture</h3>
+                        <p>take photos throughout the night with your group</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">🔒</div>
+                    <div class="step-text">
+                        <h3>locked until sunrise</h3>
+                        <p>photos stay hidden until the next morning — no edits, no deletes</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-icon">✨</div>
+                    <div class="step-text">
+                        <h3>relive it</h3>
+                        <p>wake up and rediscover the night together</p>
+                    </div>
+                </div>
+            </div>
 
-    <h2>4. Data Retention and Deletion</h2>
-    <p>We retain your data while your account is active. When you delete a photo, it is removed from our storage. When you delete your account, your data — including your profile, photos, and group memberships — is removed within 30 days. Copies may persist briefly in temporary caches before being fully cleared.</p>
+            <div class="buttons">
+                <a href="https://testflight.apple.com/join/NHrEKnx8" class="testflight-btn">join the beta on testflight</a>
+                <a href="#" class="app-store-btn">download on the app store</a>
+            </div>
+        </div>
 
-    <h2>5. Your Rights</h2>
-    <ul>
-        <li>Delete your account anytime in app settings</li>
-        <li>Update your profile at any time</li>
-        <li>Control push notifications via device settings</li>
-        <li>California residents: CCPA rights apply</li>
-        <li>EEA/UK residents: GDPR rights apply</li>
-    </ul>
+        <div class="right">
+            <div class="phone-frame">
+                <img src="screenshot.png" alt="Last Night app">
+            </div>
+        </div>
+    </div>
 
-    <h2>6. Children's Privacy</h2>
-    <p>Last Night is not intended for users under 18. We delete accounts of users found to be under 18.</p>
+    <footer>
+        <a href="/privacy">privacy policy</a>
+        <a href="/terms">terms & conditions</a>
+    </footer>
 
-    <h2>7. Security</h2>
-    <p>We use HTTPS, encrypted storage, and access controls. No method of internet transmission is 100% secure.</p>
-
-    <h2>8. Contact</h2>
-    <p>Last Night<br>Email: sydney.j.patel@gmail.com</p>
-
-    <br>
-    <p><a href="/terms.html">Terms &amp; Conditions</a></p>
 </body>
 </html>
