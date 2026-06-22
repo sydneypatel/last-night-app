@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "DNS875PGA8.com.sydneypatel.LastNight",
+        "paths": ["/join/*"]
+      }
+    ]
+  }
+}
