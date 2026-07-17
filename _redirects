@@ -1,6 +1,5 @@
 # Serve the invite landing page (with OG preview tags) for all /join/* links,
 # with a 200 status so crawlers (iMessage, etc.) read the meta tags.
-# Later: change this to a 302 redirect to the App Store listing once live.
 /join/*  /join.html  200
 
 # AASA must be served as-is (do not redirect)
